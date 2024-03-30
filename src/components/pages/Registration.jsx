@@ -63,86 +63,64 @@ function Registration() {
   };
   return (
     <section className="bg-common h-screen">
-      <div className="container p-20">
+      <div className="container flex items-center justify-center ">
         <ToastContainer />
-        <div className=" flex justify-between">
-          <div className=" flex flex-col justify-center">
-            <h1 className=" text-primary font-black text-6xl font-primary leading-loose">
-              <img src="/c.png" alt="" className="w-64" />
-            </h1>
-            <h2 className=" font-bold text-3xl font-primary mb-2">
-              Get started with easily register
+        <div>
+          <div className=" mt-10 bg-white rounded-lg shadow-md p-6">
+            <img src="/c.png" alt="" className="w-52  ml-11" />
+            <h2 className="text-lg font-bold font-primary uppercase text-black mb-4">
+              Get started with easily Sign Up
             </h2>
-            <h2 className=" font-normal text-xl text-black">
-              Free register and you can enjoy it
-            </h2>
-          </div>
-          <div>
-            <div className="w-full max-w-md bg-white rounded-lg shadow-md p-6">
-              <h2 className="text-2xl font-bold font-primary text-black mb-4">
-                Sign Up
-              </h2>
-              <div className="flex flex-col">
-                <div className="flex space-x-4 mb-4">
-                  <input
-                    value={name}
-                    onChange={(e) => SetName(e.target.value)}
-                    placeholder="First Name"
-                    className="bg-common text-black border-0 rounded-md p-2 w-1/2  focus:outline-none  focus:ring-common transition ease-in-out duration-150"
-                    type="text"
-                  />
-                  <p className="text-primary text-sm text-start font-secondary font-medium">
-                    {userError.nameError}
-                  </p>
-                  <input
-                    placeholder="Last Name"
-                    className="bg-common text-black border-0 rounded-md p-2 w-1/2 focus:outline-none  focus:ring-common transition ease-in-out duration-150"
-                    type="text"
-                  />
-                </div>
+            <div className="flex flex-col">
+              <div className="flex space-x-4 mb-4">
                 <input
-                  value={email}
-                  onChange={(e) => SetEmail(e.target.value)}
-                  placeholder="E-mail"
-                  className="bg-common text-black border-0 rounded-md p-2 mb-4  focus:outline-none focus:ring-1 focus:ring-common transition ease-in-out duration-150"
-                  type="email"
+                  value={name}
+                  onChange={(e) => SetName(e.target.value)}
+                  placeholder="Full Name"
+                  className="bg-common text-black border-0 rounded-md p-2  font-medium font-secondary outline-none min-w-full"
+                  type="text"
                 />
-                <p className="text-primary text-sm text-start font-secondary font-medium">
-                  {userError.emailError}
+                <p className="text-primary  text-start font-secondary font-medium">
+                  {userError.nameError}
                 </p>
-                <input
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  placeholder="Password"
-                  className="bg-common text-black border-0 rounded-md p-2 mb-4 focus:outline-none focus:ring-1 focus:ring-common transition ease-in-out duration-150"
-                  type="password"
-                />
-                <p className="text-primary text-sm text-start font-secondary font-medium">
-                  {userError.passwordError}
-                </p>
-                <input
-                  onChange={(e) => setPassword(e.target.value)}
-                  placeholder="Confirm Password"
-                  className="bg-common text-black border-0 rounded-md p-2 mb-4 focus:outline-none focus:ring-1 focus:ring-common transition ease-in-out duration-150"
-                  type="password"
-                />
-                <p className="text-black mt-4 font-primary font-semibold text-lg">
-                  Already have an account?
-                  <Link
-                    className=" text-primary -200  mt-4 text-lg font-primary"
-                    to="/Login"
-                  >
-                    Sing In
-                  </Link>
-                </p>
-                <button
-                  onClick={handelSubmit}
-                  className="bg-primary text-white font-semibold font-primary py-2 px-5 rounded-full mt-4"
-                  type="submit"
-                >
-                  Sign Up
-                </button>
               </div>
+              <input
+                value={email}
+                onChange={(e) => SetEmail(e.target.value)}
+                placeholder="E-mail"
+                className="bg-common text-black border-0 font-medium font-secondary rounded-md p-2 mb-4 outline-none"
+                type="email"
+              />
+              <p className="text-primary text-sm text-start font-secondary font-medium">
+                {userError.emailError}
+              </p>
+              <input
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Password"
+                className="bg-common text-black border-0 font-medium font-secondary rounded-md p-2 mb-4 outline-none"
+                type="password"
+              />
+              <p className="text-primary text-sm text-start font-secondary font-medium">
+                {userError.passwordError}
+              </p>
+
+              <p className="text-black mt-4 font-primary font-semibold text-lg">
+                Already have an account?
+                <Link
+                  className=" text-primary -200  mt-4 text-lg font-primary"
+                  to="/Login"
+                >
+                  Sing In
+                </Link>
+              </p>
+              <button
+                onClick={handelSubmit}
+                className="bg-primary text-white font-semibold font-primary py-2 px-5 rounded-full mt-4"
+                type="submit"
+              >
+                Sign Up
+              </button>
             </div>
           </div>
         </div>
