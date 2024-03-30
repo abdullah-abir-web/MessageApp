@@ -39,6 +39,7 @@ function Registration() {
           SetName("");
           SetEmail("");
           setPassword("");
+          setUserError("");
           setTimeout(() => {
             navigate("/login");
           }, 3000);

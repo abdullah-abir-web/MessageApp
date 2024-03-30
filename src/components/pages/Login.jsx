@@ -1,21 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 function Login() {
+  const auth = getAuth();
+  // const [userError, setUserError] = useState({
+  //   emailError: "",
+  //   passwordError: "",
+  // });
+  const [loginData, setLoginData] = useState({
+    email: "",
+    password: "",
+  });
+  const handelSubmit = () => {};
+  // if (!loginData .email) {
+  //   setUserError({ emailError: "Email is Required!" });
+  // } else if (!loginData.password) {
+  //   setUserError({ passwordError: "password is Required!" });
+  // }
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-common">
       <div className='"w-full max-w-md bg-white rounded-lg shadow-md p-10'>
         <h2 className="font-primary font-bold text-3xl mb-4">Sign In</h2>
         <form action="" className="flex flex-col">
           <input
-            className="bg-common text-black border-0 rounded-md p-2 mb-4 focus:outline-none"
+            onChange={(e) =>
+              setLoginData({ ...loginData, email: e.target.value })
+            }
+            className="bg-common text-black border-0 rounded-md p-2 mb-4 outline-none"
             type="email"
             placeholder="Email address"
           />
+
           <input
-            className="bg-common text-black border-0 rounded-md p-2 mb-4 focus:outline-none"
+            onChange={(e) =>
+              setLoginData({ ...loginData, password: e.target.value })
+            }
+            className="bg-common text-black border-0 rounded-md p-2 mb-4 outline-none"
             type="password"
             placeholder="Password"
           />
+
           <div className=" flex items-center justify-between flex-wrap">
             <label
               htmlFor="remember-me"
@@ -41,6 +65,7 @@ function Login() {
             </p>
           </div>
           <button
+            onClick={handelSubmit}
             className="bg-primary text-white font-semibold text-xl font-primary py-2 px-5 rounded-full mt-4"
             type="submit"
           >
