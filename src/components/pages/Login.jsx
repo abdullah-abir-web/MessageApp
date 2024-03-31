@@ -118,21 +118,14 @@ function Login() {
             </p>
           )}
 
-          <div className=" flex items-center justify-between flex-wrap">
-            <label
-              htmlFor="remember-me"
-              className=" text-lg text-black font-primary cursor-pointer font-normal mt-2"
-            >
-              <input className="mr-2" type="checkbox" />
-              Remember Me
-            </label>
+          <div className=" flex flex-wrap">
             <Link
-              className="text-sm text-primary font-primary font-medium"
+              className="text-lg text-primary font-primary font-medium "
               to="/forgetpass"
             >
               Forget Password?
             </Link>
-            <p className="text-black font-primary text-lg  font-secondary mt-4">
+            <p className="text-black  text-lg  font-secondary font-medium mt-4">
               Dont have an account?
               <Link
                 className="text-lg text-primary font-primary font-normal "

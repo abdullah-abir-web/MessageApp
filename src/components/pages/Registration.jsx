@@ -78,7 +78,7 @@ function Registration() {
                   value={name}
                   onChange={(e) => SetName(e.target.value)}
                   placeholder="Full Name"
-                  className="bg-common text-black border-0 rounded-md p-2  font-medium font-secondary outline-none min-w-full"
+                  className="bg-common text-black border-0 rounded-md p-2  font-normal font-secondary outline-none min-w-full"
                   type="text"
                 />
                 <p className="text-primary  text-start font-secondary font-medium">
@@ -89,7 +89,7 @@ function Registration() {
                 value={email}
                 onChange={(e) => SetEmail(e.target.value)}
                 placeholder="E-mail"
-                className="bg-common text-black border-0 font-medium font-secondary rounded-md p-2 mb-4 outline-none"
+                className="bg-common text-black border-0 font-normal font-secondary rounded-md p-2 mb-4 outline-none"
                 type="email"
               />
               <p className="text-primary text-sm text-start font-secondary font-medium">
@@ -99,7 +99,7 @@ function Registration() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Password"
-                className="bg-common text-black border-0 font-medium font-secondary rounded-md p-2 mb-4 outline-none"
+                className="bg-common text-black border-0 font-normal font-secondary rounded-md p-2 mb-4 outline-none"
                 type="password"
               />
               <p className="text-primary text-sm text-start font-secondary font-medium">
@@ -117,7 +117,7 @@ function Registration() {
               </p>
               <button
                 onClick={handelSubmit}
-                className="bg-primary text-white font-semibold font-primary py-2 px-5 rounded-full mt-4"
+                className="bg-primary text-white text-lg font-semibold font-secondary py-2 px-5 rounded-full mt-4"
                 type="submit"
               >
                 Sign Up
