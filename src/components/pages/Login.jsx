@@ -2,10 +2,15 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { ToastContainer, toast } from "react-toastify";
+import { FaRegEye } from "react-icons/fa";
+import { RiEyeCloseFill } from "react-icons/ri";
+import { MdEmail } from "react-icons/md";
+
 function Login() {
   const auth = getAuth();
   let navigate = useNavigate();
   const [emailError, setEmailError] = useState("");
+  const [showpass, setShowPass] = useState(false);
   const [passwordError, setPasswordError] = useState("");
   const [loginData, setLoginData] = useState({
     email: "",
@@ -69,31 +74,44 @@ function Login() {
     <div className="flex items-center justify-center h-screen bg-common">
       <ToastContainer />
       <div className='"w-full max-w-md bg-white rounded-lg shadow-md p-10'>
-        <h2 className="font-primary font-bold text-3xl mb-4">Sign In</h2>
+        <h2 className=" font-secondary  font-medium text-3xl mb-4">Sign In</h2>
         <div className="flex flex-col">
-          <input
-            onChange={(e) => {
-              setLoginData({ ...loginData, email: e.target.value }),
-                setEmailError("");
-            }}
-            className="bg-common text-black border-0 rounded-md p-2 mb-4 outline-none"
-            type="email"
-            placeholder="Email"
-          />
+          <div className=" flex items-center  relative justify-end">
+            <input
+              onChange={(e) => {
+                setLoginData({ ...loginData, email: e.target.value }),
+                  setEmailError("");
+              }}
+              className="bg-common text-black font-normal font-secondary border-0 rounded-md p-2 mb-4 outline-none w-full"
+              type="email"
+              placeholder="Email"
+            />
+            <div className=" absolute right-4 -translate-y-1/2 text-lg  opacity-50">
+              <MdEmail />
+            </div>
+          </div>
           {emailError && (
             <p className="text-primary text-sm text-start font-secondary font-medium">
               {emailError}
             </p>
           )}
-          <input
-            onChange={(e) => {
-              setLoginData({ ...loginData, password: e.target.value }),
-                setPasswordError("");
-            }}
-            className="bg-common text-black border-0 rounded-md p-2 mb-4 outline-none"
-            type="password"
-            placeholder="Password"
-          />
+          <div className="flex items-center justify-end relative">
+            <input
+              onChange={(e) => {
+                setLoginData({ ...loginData, password: e.target.value }),
+                  setPasswordError("");
+              }}
+              className="bg-common text-black font-normal font-secondary border-0 rounded-md  p-2 mb-4 outline-none w-full "
+              type={showpass ? "text" : "password"}
+              placeholder="Password"
+            />
+            <div
+              onClick={() => setShowPass(!showpass)}
+              className="absolute   right-4 -translate-y-1/2 cursor-pointer text-lg opacity-80"
+            >
+              {showpass ? <FaRegEye /> : <RiEyeCloseFill />}
+            </div>
+          </div>
           {passwordError && (
             <p className="text-primary text-sm text-start font-secondary font-medium">
               {passwordError}
@@ -103,21 +121,21 @@ function Login() {
           <div className=" flex items-center justify-between flex-wrap">
             <label
               htmlFor="remember-me"
-              className=" text-lg text-black font-primary cursor-pointer font-semibold mt-2"
+              className=" text-lg text-black font-primary cursor-pointer font-normal mt-2"
             >
               <input className="mr-2" type="checkbox" />
               Remember Me
             </label>
             <Link
-              className="text-sm text-primary font-primary font-medium  mb-.5 "
+              className="text-sm text-primary font-primary font-medium"
               to="/forgetpass"
             >
               Forget Password?
             </Link>
-            <p className="text-black font-primary text-lg font-medium mt-4">
+            <p className="text-black font-primary text-lg  font-secondary mt-4">
               Dont have an account?
               <Link
-                className="text-lg text-primary font-primary font-semibold mt-5"
+                className="text-lg text-primary font-primary font-normal "
                 to="/registration"
               >
                 Sing up
@@ -126,7 +144,7 @@ function Login() {
           </div>
           <button
             onClick={handelSubmit}
-            className="bg-primary text-white font-semibold text-xl font-primary py-2 px-5 rounded-full mt-4"
+            className="bg-primary text-white font-semibold text-xl font-secondary py-2 px-5 rounded-full mt-4"
             type="submit"
           >
             Sign In
