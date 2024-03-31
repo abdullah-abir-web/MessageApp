@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { ToastContainer, toast } from "react-toastify";
 function Login() {
   const auth = getAuth();
+  let navigate = useNavigate();
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [loginData, setLoginData] = useState({
@@ -18,7 +19,24 @@ function Login() {
     } else {
       signInWithEmailAndPassword(auth, loginData.email, loginData.password)
         .then((res) => {
-          console.log("login Succes", res);
+          if (res.user.emailVerified == false) {
+            toast.error("Email is not verified!", {
+              position: "top-center",
+              autoClose: 2000,
+              closeOnClick: true,
+              theme: "light",
+            });
+          } else {
+            toast.success("Login Successful", {
+              position: "top-center",
+              autoClose: 2000,
+              closeOnClick: true,
+              theme: "light",
+            });
+            setTimeout(() => {
+              navigate("/");
+            }, 1500);
+          }
         })
         .catch((err) => {
           console.log(err.code);
