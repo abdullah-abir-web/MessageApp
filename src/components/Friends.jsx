@@ -9,7 +9,7 @@ function Friends() {
       <div className="flex flex-col justify-center">
         <h2 className="font-semibold  text-xl font-secondary">Abdullah Abir</h2>
       </div>
-      <button className=" ml-auto font-regular text-secondary font-secondary text-lg" >
+      <button className=" ml-auto font-regular text-secondary font-secondary text-lg">
         <IoMdMore />
       </button>
     </div>
