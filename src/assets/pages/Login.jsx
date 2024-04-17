@@ -125,7 +125,7 @@ function Login() {
             >
               Forget Password?
             </Link>
-            <p className="text-black  text-lg  font-secondary font-medium mt-4">
+            <p className="text-black  text-lg  font-primary font-medium mt-4">
               Dont have an account?
               <Link
                 className="text-lg text-primary font-primary font-normal "
