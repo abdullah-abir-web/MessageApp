@@ -1,13 +1,12 @@
 import { initializeApp } from "firebase/app";
 const firebaseConfig = {
-  apiKey: "AIzaSyCZUeCim7Ycz31KwrOB4uFrRTdv433CzcU",
-  authDomain: "messageapp-e3d3f.firebaseapp.com",
-  databaseURL:
-    "https://messageapp-e3d3f-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "messageapp-e3d3f",
-  storageBucket: "messageapp-e3d3f.appspot.com",
-  messagingSenderId: "491958497717",
-  appId: "1:491958497717:web:afd9818f731a5185abe9fc",
+  apiKey: "AIzaSyB4xisC8SFPSeSjUgjX5kFBPjeS9-PisxQ",
+  authDomain: "messageapp-4e3a5.firebaseapp.com",
+  projectId: "messageapp-4e3a5",
+  storageBucket: "messageapp-4e3a5.appspot.com",
+  messagingSenderId: "904013821142",
+  appId: "1:904013821142:web:75a6f22f01e4c8476c8577",
 };
+
 const app = initializeApp(firebaseConfig);
 export default firebaseConfig;
