@@ -69,7 +69,7 @@ function Registration() {
         <div>
           <div className=" mt-10 bg-white rounded-lg shadow-md p-6">
             <img src="/c.png" alt="" className="w-52  ml-11" />
-            <h2 className="text-lg font-bold font-primary uppercase text-black mb-4">
+            <h2 className="text-lg  font-semibold font-secondary uppercase text-black mb-4">
               Get started with easily Sign Up
             </h2>
             <div className="flex flex-col">
