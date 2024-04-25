@@ -107,7 +107,7 @@ function Login() {
             />
             <div
               onClick={() => setShowPass(!showpass)}
-              className="absolute   right-4 -translate-y-1/2 cursor-pointer text-lg opacity-80"
+              className="absolute   right-4 -translate-y-1/2 cursor-pointer text-lg opacity-100"
             >
               {showpass ? <FaRegEye /> : <RiEyeCloseFill />}
             </div>
