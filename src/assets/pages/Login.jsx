@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getDatabase, ref, set } from "firebase/database";
 import { ToastContainer, toast } from "react-toastify";
 import { FaRegEye } from "react-icons/fa";
 import { RiEyeCloseFill } from "react-icons/ri";
@@ -11,6 +12,7 @@ import { loggeduser } from "../../slice/userSlice";
 function Login() {
   const dispatch = useDispatch();
   const auth = getAuth();
+  const db = getDatabase();
   let navigate = useNavigate();
   const [emailError, setEmailError] = useState("");
   const [showpass, setShowPass] = useState(false);
@@ -35,6 +37,11 @@ function Login() {
               theme: "light",
             });
           } else {
+            set(ref(db, "user/" + res.user.uid), {
+              username: res.user.displayName,
+              email: res.user.email,
+              profile_picture: res.user?.photoURL,
+            });
             toast.success("Login Successful", {
               position: "top-center",
               autoClose: 2000,
