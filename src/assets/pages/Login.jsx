@@ -5,8 +5,10 @@ import { ToastContainer, toast } from "react-toastify";
 import { FaRegEye } from "react-icons/fa";
 import { RiEyeCloseFill } from "react-icons/ri";
 import { MdEmail } from "react-icons/md";
+import { useDispatch } from "react-redux";
 
 function Login() {
+  const dispatch = useDispatch();
   const auth = getAuth();
   let navigate = useNavigate();
   const [emailError, setEmailError] = useState("");
@@ -38,9 +40,11 @@ function Login() {
               closeOnClick: true,
               theme: "light",
             });
-            setTimeout(() => {
-              navigate("/");
-            }, 1500);
+            dispatch(loggeduser("hello"));
+            console.log(res);
+            // setTimeout(() => {
+            //   navigate("/");
+            // }, 1500);
           }
         })
         .catch((err) => {
