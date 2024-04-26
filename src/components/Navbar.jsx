@@ -65,10 +65,10 @@ function Navbar() {
             >
               <img src="/public/user.png" width={40} alt="user" />
               <div>
-                <p className="text-xl font-secondary font-semibold text-primary">
-                  User Name
+                <p className="text-sm font-secondary font-semibold text-primary">
+                  {displayName.name}
                 </p>
-                <p className="text-lg font-secondary font-normal text-secondary">
+                <p className="text-sm font-secondary font-normal text-secondary">
                   Edit Profile
                 </p>
               </div>
