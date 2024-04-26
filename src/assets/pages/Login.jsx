@@ -6,6 +6,7 @@ import { FaRegEye } from "react-icons/fa";
 import { RiEyeCloseFill } from "react-icons/ri";
 import { MdEmail } from "react-icons/md";
 import { useDispatch } from "react-redux";
+import { loggeduser } from "../../slice/userSlice";
 
 function Login() {
   const dispatch = useDispatch();
@@ -40,15 +41,15 @@ function Login() {
               closeOnClick: true,
               theme: "light",
             });
-            dispatch(loggeduser("hello"));
-            console.log(res);
-            // setTimeout(() => {
-            //   navigate("/");
-            // }, 1500);
+           dispatch(loggeduser(res.user))
+            console.log(res.user);
+            setTimeout(() => {
+              navigate("/");
+            }, 1500);
           }
         })
         .catch((err) => {
-          console.log(err.code);
+          // console.log(err.code);
           if (err.code == "auth/invalid-email") {
             setEmailError("Invalid Email! Please input a valid email");
           }

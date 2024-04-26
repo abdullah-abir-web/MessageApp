@@ -4,6 +4,7 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   sendEmailVerification,
+  updateProfile
 } from "firebase/auth";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -30,19 +31,24 @@ function Registration() {
       createUserWithEmailAndPassword(auth, email, password)
         .then(() => {
           sendEmailVerification(auth.currentUser);
-          toast.success("Registration successful, please verify your email", {
-            position: "top-center",
-            autoClose: 2000,
-            closeOnClick: true,
-            theme: "light",
+          updateProfile(auth.currentUser, {
+            displayName: name,
+             photoURL: "/profile.png"
+          }).then((res)=>{
+            toast.success("Registration successful, please verify your email", {
+              position: "top-center",
+              autoClose: 2000,
+              closeOnClick: true,
+              theme: "light",
+            });
+            SetName("");
+            SetEmail("");
+            setPassword("");
+            setUserError("");
+            setTimeout(() => {
+              navigate("/login");
+            }, 3000);
           });
-          SetName("");
-          SetEmail("");
-          setPassword("");
-          setUserError("");
-          setTimeout(() => {
-            navigate("/login");
-          }, 3000);
         })
         .catch((error) => {
           console.log(error.code);
