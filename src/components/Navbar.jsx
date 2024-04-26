@@ -60,16 +60,16 @@ function Navbar() {
           </li>
           <li>
             <Link
-              to="/"
+              to="User"
               className="flex items-center gap-2 py-3 px-3 w-fit rounded-lg"
             >
               <img src="/public/user.png" width={40} alt="user" />
               <div>
-                <p className="text-sm font-secondary font-semibold text-primary">
-                  {displayName.name}
+                <p className="text-sm font-secondary font-semibold text-secondary ">
+                  User Name
                 </p>
-                <p className="text-sm font-secondary font-normal text-secondary">
-                  Edit Profile
+                <p className="text-sm font-secondary font-normal text-primary">
+                 edit
                 </p>
               </div>
             </Link>
