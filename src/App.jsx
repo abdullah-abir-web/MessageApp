@@ -9,6 +9,9 @@ import Home from "./assets/pages/Home";
 import Registration from "./assets/pages/Registration";
 import Layout from "./components/allGroupItems/Layout";
 import Login from "./assets/pages/Login";
+import User from "./components/page/User";
+import Chatbox from "./components/page/Chatbox";
+
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -17,6 +20,10 @@ function App() {
         <Route path="/Login" element={<Login />}></Route>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />}></Route>
+          <Route path="/User" element={<User />}> </Route>
+          <Route path="/Chatbox" element={<Chatbox />}> </Route>
+          
+        
         </Route>
       </Route>
     )

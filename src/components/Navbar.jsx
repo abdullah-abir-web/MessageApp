@@ -8,8 +8,9 @@ import { FaBars } from "react-icons/fa";
 function Navbar() {
   return (
     <nav className=" w-48  bg-white  pl-6 pt-10 shadow-lg">
+      
       <div>
-        <img src="/c.png" alt="" className="w-48" />
+      <img src="/c.png" alt="" className="w-48" />
       </div>
       <div>
         <ul className="navTtems mt-6 flex flex-col gap-4 text-xl  font-semibold font-secondary ">
@@ -24,7 +25,7 @@ function Navbar() {
           </li>
           <li>
             <Link
-              to="/"
+              to="/Chatbox"
               className="flex items-center gap-2 py-3 px-3 w-fit rounded-lg"
             >
               <IoChatboxOutline />
@@ -60,7 +61,7 @@ function Navbar() {
           </li>
           <li>
             <Link
-              to="User"
+              to="/User"
               className="flex items-center gap-2 py-3 px-3 w-fit rounded-lg"
             >
               <img src="/public/user.png" width={40} alt="user" />
@@ -69,7 +70,7 @@ function Navbar() {
                   User Name
                 </p>
                 <p className="text-sm font-secondary font-normal text-primary">
-                 edit
+                Edit profile
                 </p>
               </div>
             </Link>
