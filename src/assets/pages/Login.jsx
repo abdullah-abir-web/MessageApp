@@ -48,6 +48,7 @@ function Login() {
               closeOnClick: true,
               theme: "light",
             });
+            localStorage.setItem ("user",JSON.stringify(res.user));
            dispatch(loggeduser(res.user))
             console.log(res.user);
             setTimeout(() => {
