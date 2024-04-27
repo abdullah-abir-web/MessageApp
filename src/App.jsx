@@ -20,10 +20,12 @@ function App() {
         <Route path="/Login" element={<Login />}></Route>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />}></Route>
-          <Route path="/User" element={<User />}> </Route>
-          <Route path="/Chatbox" element={<Chatbox />}> </Route>
-          
-        
+          <Route path="/User" element={<User />}>
+            {" "}
+          </Route>
+          <Route path="/Chatbox" element={<Chatbox />}>
+            {" "}
+          </Route>
         </Route>
       </Route>
     )
