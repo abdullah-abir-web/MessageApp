@@ -1,5 +1,6 @@
 import React from "react";
 import ChatList from "./ChatList";
+import ChatMessage from "./ChatMessage";
 // import { FaSearch } from "react-icons/fa";
 const Chatbox = () => {
   return (
@@ -13,7 +14,7 @@ const Chatbox = () => {
         <ChatList />
         <ChatList />
       </div>
-      <div className="h-full">Message</div>
+      <ChatMessage />
     </div>
   );
 };
