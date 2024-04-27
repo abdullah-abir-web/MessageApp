@@ -2,6 +2,7 @@ import React from "react";
 import { FaPhone } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
+import { BiSolidEditAlt } from "react-icons/bi";
 const User = () => {
   return (
     <div className="w-80  bg-white shadow-lg rounded-lg overflow-hidden my-4 m-auto h-fit">
@@ -16,7 +17,10 @@ const User = () => {
         </h1>
       </div>
       <div className="py-4 px-6">
-        <p className="py-2 text-lg text-gray-700 font-secondary">Bio</p>
+      <div className="flex items-center mt-4 text-gray-700">
+      <BiSolidEditAlt />
+          <h1 className="px-2 text-sm font-secondary">Bio</h1>
+        </div>
         <div className="flex items-center mt-4 text-gray-700">
           <MdEmail />
           <h1 className="px-2 text-sm font-secondary">Email</h1>
