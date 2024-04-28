@@ -3,6 +3,7 @@ import { FaPhone } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
 import { BiSolidEditAlt } from "react-icons/bi";
+import { MdMoreVert } from "react-icons/md";
 const User = () => {
   return (
     <div className="w-80  bg-white shadow-lg rounded-lg overflow-hidden my-4 m-auto h-fit">
@@ -11,14 +12,22 @@ const User = () => {
         src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
         alt="avatar"
       />
-      <div className="flex items-center px-6 py-3 bg-gray-900">
+      <div className="flex items-center justify-between  px-6 py-3 bg-gray-900">
         <h1 className="mx-3 text-white font-semibold text-lg font-secondary">
           User Name
         </h1>
+        <div>
+          <div className="group relative w-fit">
+            <MdMoreVert className="text-white text-2xl cursor-pointer" />
+            <p className="text-white font-secondary hidden absolute bottom-full right-0 group-hover:block whitespace-nowrap">
+              Edit Profile
+            </p>
+          </div>
+        </div>
       </div>
       <div className="py-4 px-6">
-      <div className="flex items-center mt-4 text-gray-700">
-      <BiSolidEditAlt />
+        <div className="flex items-center mt-4 text-gray-700">
+          <BiSolidEditAlt />
           <h1 className="px-2 text-sm font-secondary">Bio</h1>
         </div>
         <div className="flex items-center mt-4 text-gray-700">
