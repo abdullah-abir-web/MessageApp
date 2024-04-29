@@ -22,7 +22,7 @@ function Registration() {
   });
 
   const handelSubmit = () => {
-    let re = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+    // let re = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
     if (!name) {
       setUserError({ nameError: "Name is Required!" });
     } else if (!email) {
