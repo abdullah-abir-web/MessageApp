@@ -68,7 +68,7 @@ function Navbar() {
             >
               <img src={user?.photoURL} width={40} alt="user" />
               <div>
-                <p className="text-sm font-secondary font-semibold text-primary">
+                <p className="text-sm font-primary font-bold text-primary">
                   {user.displayName}
                 </p>
                 <p className="text-sm font-secondary font-normal text-secondary">

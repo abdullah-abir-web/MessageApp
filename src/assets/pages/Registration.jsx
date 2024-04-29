@@ -8,13 +8,16 @@ import {
 } from "firebase/auth";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { MdEmail } from "react-icons/md";
+import { FaRegEye } from "react-icons/fa";
+import { RiEyeCloseFill } from "react-icons/ri";
 function Registration() {
   const auth = getAuth();
   const navigate = useNavigate();
   let [name, SetName] = useState("");
   let [email, SetEmail] = useState("");
   let [password, setPassword] = useState("");
-
+  const [showpass, setShowPass] = useState(false);
   const [userError, setUserError] = useState({
     nameError: "",
     emailError: "",
@@ -100,23 +103,36 @@ function Registration() {
                   {userError.nameError}
                 </p>
               </div>
-              <input
-                value={email}
-                onChange={(e) => SetEmail(e.target.value)}
-                placeholder="E-mail"
-                className="bg-common text-black border-0 font-normal font-secondary rounded-md p-2 mb-4 outline-none"
-                type="email"
-              />
+              <div className="flex items-center  relative justify-end">
+                <input
+                  value={email}
+                  onChange={(e) => SetEmail(e.target.value)}
+                  placeholder="E-mail"
+                  className="bg-common text-black border-0 font-normal font-secondary rounded-md w-full p-2 mb-4 outline-none"
+                  type="email"
+                />
+                <div className=" absolute right-4 -translate-y-1/2 text-lg  opacity-50">
+                  <MdEmail />
+                </div>
+              </div>
               <p className="text-primary text-sm text-start font-secondary font-medium">
                 {userError.emailError}
               </p>
-              <input
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Password"
-                className="bg-common text-black border-0 font-normal font-secondary rounded-md p-2 mb-4 outline-none"
-                type="password"
-              />
+              <div className="flex items-center justify-end relative">
+                <input
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Password"
+                  className="bg-common text-black border-0 font-normal font-secondary  rounded-md w-full p-2 mb-4 outline-none"
+                  type={showpass ? "text" : "password"}
+                />
+                <div
+                  onClick={() => setShowPass(!showpass)}
+                  className="absolute   right-4 -translate-y-1/2 cursor-pointer text-lg opacity-100"
+                >
+                  {showpass ? <FaRegEye /> : <RiEyeCloseFill />}
+                </div>
+              </div>
               <p className="text-primary text-sm text-start font-secondary font-medium">
                 {userError.passwordError}
               </p>
