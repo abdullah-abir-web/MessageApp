@@ -10,7 +10,7 @@ function Navbar() {
   const user = useSelector((state) => state.userSlice.user);
   console.log(user);
   return (
-    <nav className=" w-48  bg-white  pl-6 pt-10 shadow-lg">
+    <nav className="w-48 min-h-screen  bg-white  pl-6 pt-10 shadow-lg">
       <div>
         <img src="/c.png" alt="" className="w-48" />
       </div>
@@ -73,11 +73,11 @@ function Navbar() {
                 className=" rounded-full"
               />
               <div>
-                <p className="text-sm font-primary font-bold text-primary ">
+                <p className="text-lg font-secondary font-bold text-primary ">
                   {user.displayName}
                 </p>
                 <p className="text-sm font-secondary font-normal text-secondary">
-                  Edit profile
+                  Edit Profile
                 </p>
               </div>
             </Link>
