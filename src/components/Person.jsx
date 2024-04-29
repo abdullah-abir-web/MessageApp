@@ -1,7 +1,7 @@
 import react from "react"
 function Person() {
   return (
-    <div className="flex gap-4">
+    <div className="flex gap-4 ">
       <div>
         <img src="/user.png" alt="user" width={50} />
       </div>

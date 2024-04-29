@@ -40,7 +40,7 @@ function PeopleItems() {
       <div className="flex flex-col gap-4 mt-5">
         {loading ? (
           <div className="relative flex justify-center items-center mt-16">
-            <div className="absolute animate-spin rounded-full h-32  w-32 border-t-4 border-b-4 border-primary"></div>
+            <div className="absolute animate-spin rounded-full h-16  w-16 border-t-4 border-b-4 border-primary"></div>
           </div>
         ) : (
           userList.map((item) => <People userData={item} key={item.key} />)

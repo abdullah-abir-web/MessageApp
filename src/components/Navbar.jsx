@@ -8,11 +8,11 @@ import { FaBars } from "react-icons/fa";
 import { useSelector } from "react-redux";
 function Navbar() {
   const user = useSelector((state) => state.userSlice.user);
+  console.log(user);
   return (
     <nav className=" w-48  bg-white  pl-6 pt-10 shadow-lg">
-      
       <div>
-      <img src="/c.png" alt="" className="w-48" />
+        <img src="/c.png" alt="" className="w-48" />
       </div>
       <div>
         <ul className="navTtems mt-6 flex flex-col gap-4 text-xl  font-semibold font-secondary ">
@@ -66,13 +66,18 @@ function Navbar() {
               to="/User"
               className="flex items-center gap-2 py-3 px-3 w-fit rounded-lg"
             >
-              <img src={user?.photoURL} width={40} alt="user" />
+              <img
+                src={user?.photoURL}
+                width={40}
+                alt="user"
+                className=" rounded-full"
+              />
               <div>
-                <p className="text-sm font-primary font-bold text-primary">
+                <p className="text-sm font-primary font-bold text-primary ">
                   {user.displayName}
                 </p>
                 <p className="text-sm font-secondary font-normal text-secondary">
-                Edit profile
+                  Edit profile
                 </p>
               </div>
             </Link>

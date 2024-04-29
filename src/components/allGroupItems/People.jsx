@@ -4,7 +4,7 @@ function People({ userData }) {
   return (
     <div className="flex gap-1 items-center">
       <div className="w-12 h-12">
-        <img src={userData.profile_picture} alt="user" className="w-full" />
+        <img src={userData.profile_picture} alt="user" className="w-full rounded-full" />
       </div>
       <div className="flex flex-col justify-center">
         <h2 className=" font-medium  text-xl font-secondary">

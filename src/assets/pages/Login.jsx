@@ -26,6 +26,7 @@ function Login() {
     email: "",
     password: "",
   });
+  const provider = new GoogleAuthProvider();
   const handelSubmit = () => {
     if (!loginData.email) {
       setEmailError("Email is Required!");
@@ -89,7 +90,37 @@ function Login() {
     }
   };
   const handelGoogle = () => {
-    console.log("click");
+    signInWithPopup(auth, provider)
+      .then((res) => {
+        GoogleAuthProvider.credentialFromResult(res);
+        set(ref(db, "user/" + res.user.uid), {
+          username: res.user.displayName,
+          email: res.user.email,
+          profile_picture: res.user.photoURL,
+        })
+         
+        .then(() => {
+            toast.success("Login Successful!", {
+              position: "top-center",
+              autoClose: 5000,
+              closeOnClick: true,
+              theme: "light",
+            });
+
+            localStorage.setItem("user", JSON.stringify(res.user));
+            dispatch(loggeduser(res.user));
+            setTimeout(() => {
+              navigate("/");
+            }, 1500);
+          })
+          .catch((err) => {
+        
+          });
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+       
+      });
   };
   return (
     <div className="flex items-center justify-center h-screen bg-common">
