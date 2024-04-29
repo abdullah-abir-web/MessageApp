@@ -31,9 +31,9 @@ function PeopleItems() {
       </div>
       <div className=" py-2 px-3 border-2 border-common rounded-lg w-full flex items-center gap-2">
         <IoSearchOutline className="text-2xl " />
-        <input
-          type="text"
-          className="w-full outline-none text-lg"
+        <input 
+          type="text" 
+          className="w-full outline-none text-lg font-secondary"
           placeholder="Search"
         />
       </div>

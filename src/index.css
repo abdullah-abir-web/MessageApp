@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.button-google {
+  @apply max-w-xs flex justify-center m-auto mt-2 w-full font-primary text-sm leading-5 font-bold  uppercase  items-center border gap-3 text-[rgb(65,63,63)] bg-white cursor-pointer  ease-[ease] py-2 px-3 rounded-lg border-solid border-common;
+}
+.button-google svg {
+  @apply h-6;
+}
+.separator {
+  @apply mt-1 w-full flex items-center gap-2;
+}
+.separator .line {
+  @apply w-full h-px;
+}
