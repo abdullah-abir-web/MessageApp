@@ -4,7 +4,7 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   sendEmailVerification,
-  updateProfile
+  updateProfile,
 } from "firebase/auth";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -14,6 +14,7 @@ function Registration() {
   let [name, SetName] = useState("");
   let [email, SetEmail] = useState("");
   let [password, setPassword] = useState("");
+
   const [userError, setUserError] = useState({
     nameError: "",
     emailError: "",
@@ -21,20 +22,28 @@ function Registration() {
   });
 
   const handelSubmit = () => {
+    let re = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
     if (!name) {
       setUserError({ nameError: "Name is Required!" });
     } else if (!email) {
       setUserError({ emailError: "Email is Required!" });
     } else if (!password) {
       setUserError({ passwordError: "password is Required!" });
-    } else {
+    }
+    // else if (!re.test(password)) {
+    //   setUserError({
+    //     passwordError:
+    //       "contains at least one number (0-9) or a symbol both lower (a-z) and upper case letters (A-Z)",
+    //   });
+    // }
+    else {
       createUserWithEmailAndPassword(auth, email, password)
         .then(() => {
           sendEmailVerification(auth.currentUser);
           updateProfile(auth.currentUser, {
             displayName: name,
-             photoURL: "/profile.png"
-          }).then((res)=>{
+            photoURL: "/profile.png",
+          }).then((res) => {
             toast.success("Registration successful, please verify your email", {
               position: "top-center",
               autoClose: 2000,
@@ -87,7 +96,7 @@ function Registration() {
                   className="bg-common text-black border-0 rounded-md p-2  font-normal font-secondary outline-none min-w-full"
                   type="text"
                 />
-                <p className="text-primary  text-start font-secondary font-medium">
+                <p className="text-primary text-sm text-start font-secondary font-medium">
                   {userError.nameError}
                 </p>
               </div>

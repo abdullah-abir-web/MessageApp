@@ -4,7 +4,9 @@ import { MdEmail } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
 import { BiSolidEditAlt } from "react-icons/bi";
 import { MdMoreVert } from "react-icons/md";
+import { useSelector } from "react-redux";
 const User = () => {
+    const user = useSelector((state) => state.userSlice.user);
   return (
     <div className="w-80  bg-white shadow-lg rounded-lg overflow-hidden my-4 m-auto h-fit">
       <img
@@ -14,7 +16,7 @@ const User = () => {
       />
       <div className="flex items-center justify-between  px-6 py-3 bg-gray-900">
         <h1 className="mx-3 text-white font-semibold text-lg font-secondary">
-          User Name
+          {user.displayName}
         </h1>
         <div>
           <div className="group relative w-fit">

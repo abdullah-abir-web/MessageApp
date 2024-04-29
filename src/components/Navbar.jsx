@@ -5,7 +5,9 @@ import { FiUser } from "react-icons/fi";
 import { MdGroup } from "react-icons/md";
 import { FaRegUser } from "react-icons/fa";
 import { FaBars } from "react-icons/fa";
+import { useSelector } from "react-redux";
 function Navbar() {
+  const user = useSelector((state) => state.userSlice.user);
   return (
     <nav className=" w-48  bg-white  pl-6 pt-10 shadow-lg">
       
@@ -64,12 +66,12 @@ function Navbar() {
               to="/User"
               className="flex items-center gap-2 py-3 px-3 w-fit rounded-lg"
             >
-              <img src="/public/user.png" width={40} alt="user" />
+              <img src={user?.photoURL} width={40} alt="user" />
               <div>
-                <p className="text-sm font-secondary font-semibold text-secondary ">
-                  User Name
+                <p className="text-sm font-secondary font-semibold text-primary">
+                  {user.displayName}
                 </p>
-                <p className="text-sm font-secondary font-normal text-primary">
+                <p className="text-sm font-secondary font-normal text-secondary">
                 Edit profile
                 </p>
               </div>
