@@ -98,8 +98,7 @@ function Login() {
           email: res.user.email,
           profile_picture: res.user.photoURL,
         })
-         
-        .then(() => {
+          .then(() => {
             toast.success("Login Successful!", {
               position: "top-center",
               autoClose: 5000,
@@ -113,13 +112,10 @@ function Login() {
               navigate("/");
             }, 1500);
           })
-          .catch((err) => {
-        
-          });
+          .catch((err) => {});
       })
       .catch((error) => {
         const errorMessage = error.message;
-       
       });
   };
   return (
