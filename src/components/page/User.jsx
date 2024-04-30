@@ -4,14 +4,71 @@ import { MdEmail } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
 import { BiSolidEditAlt } from "react-icons/bi";
 import { MdMoreVert } from "react-icons/md";
+// import Cropper from "react-cropper";
+// import "cropperjs/dist/cropper.css";
+// import { createRef,useState } from "react";
 import { useSelector } from "react-redux";
 const User = () => {
-    const user = useSelector((state) => state.userSlice.user);
+  const user = useSelector((state) => state.userSlice.user);
+
+  // const [image, setImage] = useState("https://raw.githubusercontent.com/roadmanfong/react-cropper/master/example/img/child.jpg");
+  // const [CropData, setCropData] = useState("");
+  // const cropperRef = createRef();
+  // const onChange = (e) => {
+  //   let files;
+  //   if (e.dataTransfer) {
+  //     files = e.dataTransfer.files;
+  //   }
+  //   else if (e.target) {
+  //     files = e.target.files;
+  //   }
+  //   const reader = new FileReader();
+  //   reader.onload = () => {
+  //     setImage(reader.result);
+  //   };
+  //   reader.readAsDataURL(files[0]);
+  // };
+
+  // const getCropData = () => {
+  //   if (typeof cropperRef.current?.cropper !== "undefined") {
+  //     setCropData(cropperRef.current?.cropper.getCroppedCanvas().toDataURL());
+  //   }
+  // };
+
+  // console.log(CropData);
+
   return (
     <div className="w-80  bg-white shadow-lg rounded-lg overflow-hidden my-4 m-auto h-fit">
+      {/* <div class="file-upload">
+  <div class="file-select">
+    <div class="file-select-button" id="fileName">Choose File</div>
+    <div class="file-select-name" id="noFile">No file chosen...</div> 
+    <input type="file" name="chooseFile" id="chooseFile"/>
+  </div>
+</div> */}
+
+      {/* <div className="my-20 ">
+        <input type="file"  onChange={onChange}/ >
+        <Cropper
+          ref={cropperRef}
+          style={{ height: 400, width: "100%" }}
+          zoomTo={0.5}
+          initialAspectRatio={1}
+          preview=".img-preview"
+          src={image}
+          viewMode={1}
+          minCropBoxHeight={10}
+          minCropBoxWidth={10}
+          background={false}
+          responsive={true}
+          autoCropArea={1}
+          checkOrientation={false} 
+          guides={true}
+        />
+      </div> */}
       <img
         className="w-full h-60 object-cover object-center"
-        src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
+        src={user?.photoURL}
         alt="avatar"
       />
       <div className="flex items-center justify-between  px-6 py-3 bg-gray-900">

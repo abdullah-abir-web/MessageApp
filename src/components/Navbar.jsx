@@ -73,7 +73,7 @@ function Navbar() {
                 className=" rounded-full"
               />
               <div>
-                <p className="text-lg font-secondary font-bold text-primary ">
+                <p className="text-lg font-secondary font-bold text-primary">
                   {user.displayName}
                 </p>
                 <p className="text-sm font-secondary font-normal text-secondary">
