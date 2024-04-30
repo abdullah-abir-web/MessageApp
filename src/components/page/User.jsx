@@ -83,6 +83,7 @@ const User = () => {
               ) : (
                 ""
               )}
+
               <button
                 onClick={handelClose}
                 className="bg-primary text-white font-secondary font-semibold p-2 rounded"
@@ -91,11 +92,11 @@ const User = () => {
               </button>
             </div>
             <div className="flex gap-1 items-center ">
-            <label
+              <label
                 htmlFor="profile"
                 className=" bg-white font-secondary py-2 px-2 rounded cursor-pointer"
               >
-               Choose profile picture
+                Choose profile picture
                 <input
                   id="profile"
                   type="file"
@@ -104,11 +105,11 @@ const User = () => {
                 />
               </label>
               <button
-              onClick={getCropData}
-              className="crop-btn my-2 font-secondary "
-            >
-              Crop Image
-            </button>
+                onClick={getCropData}
+                className="crop-btn my-2 font-secondary "
+              >
+                Crop Image
+              </button>
             </div>
             {image && (
               <Cropper
@@ -128,7 +129,7 @@ const User = () => {
                 guides={true}
               />
             )}
-           
+
             <img src={cropData} alt="" className="w-20" />
           </div>
         </div>
