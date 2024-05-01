@@ -7,7 +7,6 @@ function People({ userData }) {
   const user = useSelector((state) => state.userSlice.user);
 
   const handelRequest = (key, userName) => {
-    console.log(key);
     set(push(ref(db, "friendRequest/")), {
       senderName: user.displayName,
       senderId: user.uid,
