@@ -30,7 +30,8 @@ const User = () => {
     } else if (e.target) {
       files = e.target.files;
     }
-    const reader = new FileReader();
+
+       const reader = new FileReader();
     reader.onload = () => {
       setImage(reader.result);
     };
@@ -42,6 +43,7 @@ const User = () => {
       setCropData(cropperRef.current?.cropper.getCroppedCanvas().toDataURL());
     }
   };
+
   const handelClose = () => {
     setEnableEdit(false);
     setCropData("");

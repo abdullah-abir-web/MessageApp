@@ -8,9 +8,9 @@ import { FaBars } from "react-icons/fa";
 import { useSelector } from "react-redux";
 function Navbar() {
   const user = useSelector((state) => state.userSlice.user);
-  // console.log(user);
+  console.log(user);
   return (
-    <nav className="w-48 min-h-screen  bg-white  pl-6 pt-10 shadow-lg">
+    <nav className="w-44 min-h-screen  bg-white  pl-6 pt-10 shadow-lg">
       <div>
         <img src="/c.png" alt="" className="w-48" />
       </div>
