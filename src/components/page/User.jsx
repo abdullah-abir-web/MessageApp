@@ -1,7 +1,5 @@
 import React from "react";
-import { FaPhone } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
-import { FaLocationDot } from "react-icons/fa6";
 import { BiSolidEditAlt } from "react-icons/bi";
 import { MdMoreVert } from "react-icons/md";
 import { useSelector } from "react-redux";
@@ -31,7 +29,7 @@ const User = () => {
       files = e.target.files;
     }
 
-       const reader = new FileReader();
+    const reader = new FileReader();
     reader.onload = () => {
       setImage(reader.result);
     };
@@ -49,7 +47,6 @@ const User = () => {
     setCropData("");
     setImage("");
   };
-
   const handelUpload = () => {
     if (cropData) {
       const storageRef = ref(storage, user?.uid);
