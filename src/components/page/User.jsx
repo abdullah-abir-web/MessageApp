@@ -65,7 +65,6 @@ const User = () => {
       });
     }
   };
-
   return (
     <div className="w-80  bg-white shadow-lg rounded overflow-hidden my-4 m-auto h-fit ">
       {enableEdit && (
