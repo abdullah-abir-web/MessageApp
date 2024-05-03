@@ -21,6 +21,7 @@ function PeopleItems() {
         setLoading(false);
       });
     });
+    
   }, []);
   // console.log("my_id", user.uid);
   // console.log("my_id", userList);

@@ -33,7 +33,7 @@ function People({ userData }) {
         className="bg-primary p-2  rounded ml-auto font-bold text-white font-primary text-lg"
       >
         Add Friend
-      </button>
+      </button> 
     </div>
   );
 }
