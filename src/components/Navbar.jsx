@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { IoMdHome } from "react-icons/io";
 import { IoChatboxOutline } from "react-icons/io5";
-import { FiUser } from "react-icons/fi";
 import { MdGroup } from "react-icons/md";
 import { FaRegUser } from "react-icons/fa";
 import { FaBars } from "react-icons/fa";
