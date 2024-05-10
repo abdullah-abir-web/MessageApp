@@ -1,5 +1,23 @@
 import React from "react";
+
+import { getDatabase, ref, set } from "firebase/database";
+import { useEffect } from "react";
+
 function FriendRequests() {
+  const db = getDatabase();
+ 
+
+//  useEffect(()=>{
+//   const starCountRef = ref(db, 'friendRequest/' );
+//    onValue(starCountRef, (snapshot) => {
+   
+   
+// })
+//  },[])
+
+
+  
+
   return (
     <div className="flex gap-4">
       <div>
