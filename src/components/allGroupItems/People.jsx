@@ -5,7 +5,6 @@ import { getDatabase, push, ref, set } from "firebase/database";
 function People({ userData }) {
   const db = getDatabase();
   const user = useSelector((state) => state.userSlice.user);
-
   const handelRequest = (key, userName) => {
     set(push(ref(db, "friendRequest/")), {
       senderName: user.displayName,
@@ -30,7 +29,7 @@ function People({ userData }) {
       </div>
       <button
         onClick={() => handelRequest(userData.key, userData.username)}
-        className="bg-primary p-2  rounded ml-auto font-bold text-white font-primary text-lg"
+        className=" bg-[#356cdb] p-2  rounded ml-auto font-semibold text-white font-primary text-lg"
       >
         Add Friend
       </button>

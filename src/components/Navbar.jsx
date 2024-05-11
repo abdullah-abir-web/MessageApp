@@ -9,16 +9,16 @@ function Navbar() {
   const user = useSelector((state) => state.userSlice.user);
   // console.log(user);
   return (
-    <nav className="w-44 min-h-screen  bg-white  pl-6 pt-10 shadow-lg">
+    <nav className="w-44 min-h-screen  bg-[#3D3B40]   pl-6 pt-10 shadow-lg">
       <div>
         <img src="/c.png" alt="" className="w-48" />
       </div>
       <div>
-        <ul className="navTtems mt-6 flex flex-col gap-4 text-xl  font-semibold font-secondary ">
+        <ul className="navTtems mt-6 flex flex-col gap-4 text-xl text-white  font-semibold font-secondary ">
           <li>
             <Link
-              to="/"
-              className="flex items-center gap-2 py-3 px-3  bg-primary rounded-lg text-white w-fit"
+              to="/NewsFeed"
+              className="flex items-center gap-2 py-3 px-3  bg-[#092635] rounded-lg text-white w-fit"
             >
               <IoMdHome />
               <span>Home</span>
@@ -35,7 +35,7 @@ function Navbar() {
           </li>
           <li>
             <Link
-              to="/"
+              to="/GroupList"
               className="flex items-center gap-2 py-3 px-3 w-fit rounded-lg"
             >
               <MdGroup />
@@ -44,7 +44,7 @@ function Navbar() {
           </li>
           <li>
             <Link
-              to="/"
+              to="/FriendList"
               className="flex items-center gap-2 py-3 px-3 w-fit rounded-lg"
             >
               <FaRegUser />
@@ -53,7 +53,7 @@ function Navbar() {
           </li>
           <li>
             <Link
-              to="/"
+              to="/People"
               className="flex items-center gap-2 py-3 px-3 w-fit rounded-lg"
             >
               <FaBars />
@@ -61,18 +61,14 @@ function Navbar() {
             </Link>
           </li>
           <li>
-            <Link
-              to="/User"
-              className=" flex items-center gap-2"
-            >
+            <Link to="/User" className=" flex items-center gap-2">
               <img
                 src={user?.photoURL}
-                
                 alt="user"
                 className=" rounded-full w-10 h-10"
               />
               <div>
-                <p className="text-lg font-primary font-semibold text-primary">
+                <p className="text-lg font-primary font-semibold text-white">
                   {user.displayName}
                 </p>
                 <p className="text-sm font-secondary font-normal text-secondary">

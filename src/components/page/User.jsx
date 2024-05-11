@@ -66,7 +66,7 @@ const User = () => {
     }
   };
   return (
-    <div className="w-80  bg-white shadow-lg rounded overflow-hidden my-4 m-auto h-fit ">
+    <div className="w-80  shadow-lg rounded overflow-hidden my-4 m-auto h-fit ">
       {enableEdit && (
         <div className="absolute top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.6)] border p-5  flex justify-center items-center">
           <div className=" bg-common p-5 rounded w-1/4 ">

@@ -1,15 +1,14 @@
-import react from "react";
-import Person from "../Person";
+
 import { IoMdMore } from "react-icons/io";
 import { FaSearch } from "react-icons/fa";
+import Person from "../Person";
+import MyGroup from "../../components/allGroupItems/MyGroup";
 
-function MyGroup() {
+function GroupList() {
   return (
-    <div className="w-full p-4 rounded-2xl bg-white shadow-lg">
+    <div className="w-full p-4 rounded-2xl bg-white shadow-lg items-center">
       <div className="flex justify-between pb-4">
-        <h2 className="title font-secondary text-2xl font-semibold">
-          My Groups
-        </h2>
+        <h2 className="title font-secondary  text-2xl font-semibold">Group</h2>
         <button>
           <IoMdMore className="text-2xl" />
         </button>
@@ -28,8 +27,11 @@ function MyGroup() {
         <Person />
         <Person />
       </div>
+     <div>
+     <MyGroup />
+     </div>
     </div>
   );
 }
 
-export default MyGroup;
+export default GroupList;

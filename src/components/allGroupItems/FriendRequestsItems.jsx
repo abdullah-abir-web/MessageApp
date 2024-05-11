@@ -3,7 +3,7 @@ import FriendRequests from "./FriendRequests";
 import { IoMdMore } from "react-icons/io";
 function FriendRequestsItems() {
   return (
-    <div className="w-1/3 p-4 rounded-2xl bg-white shadow-lg">
+    <div className="w-full p-3  bg-[#222831]  ">
       <div className="flex justify-between pb-4">
         <h2 className="title font-secondary  text-2xl font-semibold">
           Friend Request

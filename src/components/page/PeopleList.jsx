@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { IoSearchOutline } from "react-icons/io5";
 import { getDatabase, ref, onValue } from "firebase/database";
-import People from "./People";
+import PeopleItems from "/src/components/allGroupItems/PeopleItems";
+import People from "../allGroupItems/People";
 import { useSelector } from "react-redux";
-function PeopleItems() {
+function PeopleList() {
   const db = getDatabase();
   const user = useSelector((state) => state.userSlice.user);
   const [userList, setUserList] = useState([]);
@@ -25,7 +26,7 @@ function PeopleItems() {
   // console.log("my_id", user.uid);
   // console.log("my_id", userList);
   return (
-    <div className="w-1/3 p-4 rounded-lg bg-[#222831] shadow-lg">
+    <div className="w-full p-4  bg-[#222831] shadow-lg">
       <div className="flex justify-between pb-4">
         <h2 className="title font-secondary text-white  text-xl font-semibold">
           People you may know
@@ -70,4 +71,4 @@ function PeopleItems() {
   );
 }
 
-export default PeopleItems;
+export default PeopleList;
