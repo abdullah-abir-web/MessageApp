@@ -24,7 +24,7 @@ function People({ userData }) {
         />
       </div>
       <div className="flex flex-col justify-center">
-        <h2 className=" font-medium  text-xl font-secondary">
+        <h2 className=" font-medium text-white text-xl font-secondary">
           {userData.username}
         </h2>
       </div>
