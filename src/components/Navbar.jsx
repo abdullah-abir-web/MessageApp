@@ -5,6 +5,7 @@ import { MdGroup } from "react-icons/md";
 import { FaRegUser } from "react-icons/fa";
 import { FaBars } from "react-icons/fa";
 import { useSelector } from "react-redux";
+import { useState } from "react";
 function Navbar() {
   const user = useSelector((state) => state.userSlice.user);
   // console.log(user);
