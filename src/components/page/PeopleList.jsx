@@ -36,7 +36,7 @@ function PeopleList() {
         <IoSearchOutline className="text-2xl text-white" />
         <input
           type="text"
-          className="w-full outline-none bg-[#31363F]  text-lg font-secondary"
+          className="w-full outline-none bg-[#31363F] text-white  text-lg font-primary"
           placeholder="Search"
         />
       </div>

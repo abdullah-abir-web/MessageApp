@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { getDatabase, push, ref, set } from "firebase/database";
+import { IoPersonAddSharp } from "react-icons/io5";
 
 function People({ userData }) {
   const db = getDatabase();
@@ -29,8 +30,9 @@ function People({ userData }) {
       </div>
       <button
         onClick={() => handelRequest(userData.key, userData.username)}
-        className=" bg-[#356cdb] p-2  rounded ml-auto font-semibold text-white font-primary text-lg"
+        className="bg-blue-600 p-2 flex items-center gap-1  rounded ml-auto font-semibold text-white font-primary text-lg"
       >
+        <IoPersonAddSharp />
         Add Friend
       </button>
     </div>

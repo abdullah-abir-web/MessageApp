@@ -5,12 +5,12 @@ import { MdGroup } from "react-icons/md";
 import { FaRegUser } from "react-icons/fa";
 import { FaBars } from "react-icons/fa";
 import { useSelector } from "react-redux";
-import { useState } from "react";
 function Navbar() {
   const user = useSelector((state) => state.userSlice.user);
   // console.log(user);
+
   return (
-    <nav className="w-44 min-h-screen  bg-[#3D3B40]   pl-6 pt-10 shadow-lg">
+    <nav className="w-44 min-h-screen  bg-[#31363F]   pl-6 pt-10 shadow-lg">
       <div>
         <img src="/c.png" alt="" className="w-48" />
       </div>
@@ -31,7 +31,7 @@ function Navbar() {
               className="flex items-center gap-2 py-3 px-3 w-fit rounded-lg"
             >
               <IoChatboxOutline />
-              <span> Chat</span>
+              <span>Chat</span>
             </Link>
           </li>
           <li>

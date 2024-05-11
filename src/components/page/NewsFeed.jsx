@@ -6,7 +6,7 @@ import { IoMdNotifications } from "react-icons/io";
 const NewsFeed = () => {
   return (
     <div className=" w-full text-white  bg-[#222831] ">
-      <div className=" flex items-center   justify-around  gap-1 p-4 fixed w-full bg-[#3D3B40] ">
+      <div className=" flex items-center   justify-around  gap-1 p-4 fixed w-full 	">
         <IoMdHome className="text-white text-2xl" />
         <MdOutlineOndemandVideo className="text-2xl" />
         <IoMdNotifications className="text-white text-2xl" />

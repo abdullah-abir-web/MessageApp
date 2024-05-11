@@ -1,23 +1,23 @@
-
 import { IoMdMore } from "react-icons/io";
-import { FaSearch } from "react-icons/fa";
 import Person from "../Person";
+import { IoSearchOutline } from "react-icons/io5";
+
 import MyGroup from "../../components/allGroupItems/MyGroup";
 
 function GroupList() {
   return (
-    <div className="w-full p-4 rounded-2xl bg-white shadow-lg items-center">
+    <div className="w-full p-4  bg-[#222831]  text-white items-center">
       <div className="flex justify-between pb-4">
         <h2 className="title font-secondary  text-2xl font-semibold">Group</h2>
         <button>
           <IoMdMore className="text-2xl" />
         </button>
       </div>
-      <div className=" py-2 px-3 border-2 border-common rounded-lg w-full flex items-center gap-2">
-        <FaSearch className="text-lg" />
+      <div className=" py-2 px-3  border-[#31363F] bg-[#31363F] rounded-lg  w-full flex items-center gap-2">
+        <IoSearchOutline className="text-2xl font-primary " />
         <input
           type="text"
-          className="w-full outline-none text-lg"
+          className="w-full outline-none  bg-[#31363F] text-lg"
           placeholder="Search"
         />
       </div>
@@ -27,9 +27,7 @@ function GroupList() {
         <Person />
         <Person />
       </div>
-     <div>
-     <MyGroup />
-     </div>
+      <div>{/* <MyGroup /> */}</div>
     </div>
   );
 }

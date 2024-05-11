@@ -11,6 +11,12 @@ export default {
         primary:"	#FF0000",
         secondary:"#7A7A7A",
         common:"#ebebeb",
+        backdropBlur: {
+
+          '3xl': '40px',
+  
+        },
+  
       },
     },
     fontFamily: {

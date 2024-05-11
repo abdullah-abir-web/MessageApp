@@ -20,11 +20,13 @@ function FriendRequests() {
       <div className="flex flex-col justify-center">
         <h2 className="font-semibold text-lg font-secondary">Abdullah Abir</h2>
       </div>
-      <div className="ml-auto flex flex-col">
-        <button className="px-3 rounded bg-[#2a9df4] text-white font-secondary text-lg font-normal">
+      <div className="ml-auto flex gap-10  ">
+        <button className="bg-[#356cdb] p-2 rounded text-white font-primary text-lg font-semibold">
           Confirm
         </button>
-        <button className="font-secondary text-lg font-normal ">Cancel</button>
+        <button className="font-primary p-2 rounded  text-lg font-medium bg-[#3D3B40] ">
+          Cancel
+        </button>
       </div>
     </div>
   );
