@@ -1,4 +1,3 @@
-
 import { IoMdMore } from "react-icons/io";
 import { FaSearch } from "react-icons/fa";
 import Person from "../Person";

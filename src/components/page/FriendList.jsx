@@ -7,7 +7,7 @@ function FriendList() {
   return (
     <div className="w-full text-white p-4  bg-[#222831] ">
       <div>
-        {/* <FriendRequestsItems /> */}
+        <FriendRequestsItems />
       </div>
       {/* <hr /> */}
       <div className="flex justify-between pb-4">
