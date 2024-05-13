@@ -1,17 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-import { getDatabase, ref, set } from "firebase/database";
+import { getDatabase, ref, onValue } from "firebase/database";
+import { useSelector } from "react-redux";
 
 function FriendRequests() {
   const db = getDatabase();
+  const user = useSelector((state) => state.userSlice.user);
 
-  //  useEffect(()=>{
-  //   const starCountRef = ref(db, 'friendRequest/' );
-  //    onValue(starCountRef, (snapshot) => {
+  const [friendRequestList, setFriendRequestList] = useState([]);
 
-  // })
-  //  },[])
-
+  useEffect(() => {
+    let arr = [];
+    const starCountRef = ref(db, "friendRequest/");
+    onValue(starCountRef, (snapshot) => {
+      snapshot.forEach((item) => {
+        if (item.val().reciverId == user.uid) {
+          arr.push({ ...item.val(), key: item.key });
+        }
+      });
+      setFriendRequestList(arr);
+    });
+  }, []);
   return (
     <div className="flex gap-4">
       <div>

@@ -29,7 +29,6 @@ function App() {
           <Route path="/FriendList" element={<FriendList />}></Route>
           <Route path="/GroupList" element={<GroupList />}></Route>
           <Route path="/NewsFeed" element={<NewsFeed />}></Route>
-
         </Route>
       </Route>
     )

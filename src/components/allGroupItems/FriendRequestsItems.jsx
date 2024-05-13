@@ -15,9 +15,6 @@ function FriendRequestsItems() {
       <div className="flex flex-col gap-4">
         <FriendRequests />
         <FriendRequests />
-        <FriendRequests />
-        <FriendRequests />
-        <FriendRequests />
       </div>
     </div>
   );

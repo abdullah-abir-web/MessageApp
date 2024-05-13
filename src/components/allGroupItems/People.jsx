@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { getDatabase, push, ref, set } from "firebase/database";
 import { IoPersonAddSharp } from "react-icons/io5";
 
 function People({ userData }) {
   const db = getDatabase();
+
   const user = useSelector((state) => state.userSlice.user);
   const handelRequest = (key, userName) => {
     set(push(ref(db, "friendRequest/")), {
@@ -14,6 +15,24 @@ function People({ userData }) {
       reciverId: key,
     });
   };
+
+
+  // useEffect(() => {
+  //   let arr = [];
+  //   const starCountRef = ref(db, "friendRequest/");
+  //   onValue(starCountRef, (snapshot) => {
+  //     snapshot.forEach((item) => {
+  //       arr.push(item.val().senderId + item.val().reciverId);
+  //     });
+  //     setFriendRequestList(arr);
+  //   });
+  // }, [realtime]);
+
+
+
+
+
+
   return (
     <div className="flex gap-1 items-center">
       <div className="w-12 h-12">

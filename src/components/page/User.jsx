@@ -13,7 +13,10 @@ import {
   getDownloadURL,
 } from "firebase/storage";
 import { updateProfile, onAuthStateChanged, getAuth } from "firebase/auth";
+import { getDatabase, ref as dref, set } from "firebase/database";
+
 const User = () => {
+  const db = getDatabase();
   const auth = getAuth();
   const storage = getStorage();
   const user = useSelector((state) => state.userSlice.user);
@@ -21,6 +24,8 @@ const User = () => {
   const [image, setImage] = useState();
   const [cropData, setCropData] = useState("");
   const cropperRef = createRef();
+  const [loading, setLoading] = useState(false);
+
   const onChange = (e) => {
     let files;
     if (e.dataTransfer) {
@@ -48,6 +53,7 @@ const User = () => {
     setImage("");
   };
   const handelUpload = () => {
+    setLoading(true);
     if (cropData) {
       const storageRef = ref(storage, user?.uid);
       uploadString(storageRef, cropData, "data_url").then(() => {
@@ -56,8 +62,15 @@ const User = () => {
             updateProfile(auth.currentUser, {
               profile_picture: downloadURL,
             }).then(() => {
+              console.log(auth.currentUser);
+              set(dref(db, "user/" + user.uid), {
+                email: user.email,
+                profile_picture: downloadURL,
+                username: user.displayName,
+              });
               setEnableEdit(false);
               setCropData("");
+              setLoading(false);
               setImage("");
             });
           });
@@ -71,17 +84,21 @@ const User = () => {
         <div className="absolute top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.6)] border p-5  flex justify-center items-center">
           <div className=" bg-common p-5 rounded w-1/4 ">
             <div className="flex justify-between my-2 ">
-              {cropData ? (
-                <button
-                  onClick={handelUpload}
-                  className="bg-[#008000] text-white font-secondary font-semibold p-2 rounded"
-                >
-                  save
-                </button>
-              ) : (
-                ""
-              )}
-
+              {cropData &&
+                (loading ? (
+                  <div class="three-body">
+                    <div class="three-body__dot"></div>
+                    <div class="three-body__dot"></div>
+                    <div class="three-body__dot"></div>
+                  </div>
+                ) : (
+                  <button
+                    onClick={handelUpload}
+                    className="py-1 w-20 bg-green-600 rounded font-primary font-semibold text-white flex justify-center items-center"
+                  >
+                    Save
+                  </button>
+                ))}
               <button
                 onClick={handelClose}
                 className="bg-primary text-white font-secondary font-semibold p-2 rounded"
