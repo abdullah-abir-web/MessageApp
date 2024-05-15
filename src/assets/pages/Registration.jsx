@@ -63,7 +63,7 @@ function Registration() {
           });
         })
         .catch((error) => {
-          console.log(error.code);
+          // console.log(error.code);
           if (error.code.includes("auth/invalid-email")) {
             setUserError({ emailError: "Invalid Email!" });
           }
