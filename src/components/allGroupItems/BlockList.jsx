@@ -9,7 +9,9 @@ function BlockList() {
         <h2 className="font-semibold text-lg font-secondary">Abdullah Abir</h2>
       </div>
       <div className="ml-auto flex flex-col justify-center">
-        <button className=" px-2 rounded bg-[#2a9df4] text-white font-secondary text-lg font-normal">Unblock</button>
+        <button className=" px-2 rounded bg-[#2a9df4] text-white font-secondary text-lg font-normal">
+          Unblock
+        </button>
       </div>
     </div>
   );
