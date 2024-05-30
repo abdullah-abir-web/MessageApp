@@ -3,13 +3,13 @@ import Navbar from "../Navbar";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
 const Layout = () => {
-//  ` // const navigate = useNavigate();
-//   // const user = useSelector((state) => state.userSlice.user);
-//   // useEffect(() => {
-//   //   if (!user) {
-//   //     return navigate("/Login");
-//   //   }
-//   // }, []);`
+ ` // const navigate = useNavigate();
+  // const user = useSelector((state) => state.userSlice.user);
+  // useEffect(() => {
+  //   if (!user) {
+  //     return navigate("/Login");
+  //   }
+  // }, []);`
   return (
     <div className="flex">
       <Navbar />
